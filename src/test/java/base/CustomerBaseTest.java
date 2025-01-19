@@ -20,10 +20,10 @@ public class CustomerBaseTest {
         driver.get("https://auto.pragmatic.bg/index.php?route=account/login&language=en-gb");
     }
 
-//    @AfterMethod
-//    public void tearDown() {
-//        driver.quit();
-//    }
+    @AfterMethod
+    public void tearDown() {
+        driver.quit();
+    }
 }
 
 
