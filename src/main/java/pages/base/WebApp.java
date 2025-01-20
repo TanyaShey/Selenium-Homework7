@@ -3,10 +3,7 @@ package pages.base;
 import org.openqa.selenium.WebDriver;
 import pages.admin.DashboardPage;
 import pages.admin.LoginPage;
-import pages.frontend.ContactUsPage;
-import pages.frontend.CustomerLoginPage;
-import pages.frontend.RegisterAccountPage;
-import pages.frontend.RegistrationConfirmationPage;
+import pages.frontend.*;
 
 public class WebApp {
 
@@ -17,7 +14,7 @@ public class WebApp {
     private RegisterAccountPage registerAccountPage;
     private RegistrationConfirmationPage registrationConfirmationPage;
     private ContactUsPage contactUsPage;
-    pri
+    private ContactedSuccessfullyPage contactedSuccessfullyPage;
 
     public WebApp(WebDriver driver) {
         this.driver = driver;
@@ -56,6 +53,20 @@ public class WebApp {
             registrationConfirmationPage = new RegistrationConfirmationPage(driver);
         }
         return  registrationConfirmationPage;
+    }
+
+    public ContactUsPage contactUsPage() {
+        if (contactUsPage == null) {
+            contactUsPage = new ContactUsPage(driver);
+        }
+        return  contactUsPage;
+    }
+
+    public ContactedSuccessfullyPage contactedSuccessfullyPage() {
+        if (contactedSuccessfullyPage == null) {
+            contactedSuccessfullyPage = new ContactedSuccessfullyPage(driver);
+        }
+        return  contactedSuccessfullyPage;
     }
 
 }

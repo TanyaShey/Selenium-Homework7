@@ -28,12 +28,6 @@ public class RegisterAccountPageTest extends BaseTest {
         driver.get("https://auto.pragmatic.bg/index.php?route=account/success&language=en-gb");
         webApp.registrationConfirmationPage().verifySuccessfulRegistrationText("Your Account Has Been Created!");
 
-
-
-
-
-
-
     }
 
 

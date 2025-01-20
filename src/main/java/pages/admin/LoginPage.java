@@ -1,5 +1,6 @@
 package pages.admin;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,22 +17,28 @@ public class LoginPage extends BasePage {
     @FindBy (className = "btn-primary")
     private WebElement loginButton;
 
+    private static final String URL = "https://auto.pragmatic.bg/manage";
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
+    public void goToLoginPage() {
+        driver.get(URL);
+    }
+
     public void login(String username, String password) {
-        fillInUsernameInputField(username);
-        fillInPasswordInputField(password);
+        typeTextInUsernameInputField(username);
+        typeTextInPasswordInputField(password);
         clickLoginButton();
     }
 
-    public void fillInUsernameInputField(String username) {
-        usernameInputField.sendKeys(username);
+    public void typeTextInUsernameInputField(String username) {
+        typeText(usernameInputField, username);
     }
 
-    public void fillInPasswordInputField(String password) {
-        passwordInputField.sendKeys(password);
+    public void typeTextInPasswordInputField(String password) {
+        typeTextByLocator(By.id("input-password"), password);
     }
 
     public void clickLoginButton() {

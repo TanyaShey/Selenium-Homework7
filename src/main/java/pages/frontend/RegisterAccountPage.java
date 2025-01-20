@@ -25,8 +25,14 @@ public class RegisterAccountPage extends BasePage {
     @FindBy(xpath = "//*[@id='form-register']/div/button")
     private WebElement continueButton;
 
+    private static final String URL = "https://auto.pragmatic.bg/index.php?route=account/login&language=en-gb";
+
     public RegisterAccountPage(WebDriver driver) {
         super(driver);
+    }
+
+    public void goToRegisterAccountPage() {
+        driver.get(URL);
     }
 
     public void registerAccount(String firstName, String lastName, String email, String password) {

@@ -1,9 +1,12 @@
 package pages.frontend;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.base.BasePage;
+import utils.WaitTool;
 
 public class ContactUsPage extends BasePage {
 
@@ -28,6 +31,10 @@ public class ContactUsPage extends BasePage {
         fillInYourNameField(yourName);
         fillInEmailField(email);
         fillInEnquiryField(enquiry);
+        WaitTool.waitForElement(driver, By.xpath("//*[@id='form-contact']/div/button"), 10);
+        //Scroll element into view
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView();", driver.findElement(By.xpath("//*[@id='form-contact']/div/button")));
         clickSubmitButton();
     }
 
