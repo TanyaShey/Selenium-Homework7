@@ -6,7 +6,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.base.WebApp;
 
-public class AdminBaseTest {
+public class BaseTest {
 
    protected WebDriver driver;
    protected WebApp webApp;
@@ -16,7 +16,6 @@ public class AdminBaseTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         webApp = new WebApp(driver);
-        driver.get("https://auto.pragmatic.bg/manage/");
     }
 
     @AfterMethod

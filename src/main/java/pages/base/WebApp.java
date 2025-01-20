@@ -3,6 +3,7 @@ package pages.base;
 import org.openqa.selenium.WebDriver;
 import pages.admin.DashboardPage;
 import pages.admin.LoginPage;
+import pages.frontend.ContactUsPage;
 import pages.frontend.CustomerLoginPage;
 import pages.frontend.RegisterAccountPage;
 import pages.frontend.RegistrationConfirmationPage;
@@ -15,6 +16,8 @@ public class WebApp {
     private CustomerLoginPage customerLoginPage;
     private RegisterAccountPage registerAccountPage;
     private RegistrationConfirmationPage registrationConfirmationPage;
+    private ContactUsPage contactUsPage;
+    pri
 
     public WebApp(WebDriver driver) {
         this.driver = driver;

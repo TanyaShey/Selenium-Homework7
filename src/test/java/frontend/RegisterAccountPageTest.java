@@ -1,15 +1,16 @@
 package frontend;
 
-import base.CustomerBaseTest;
+import base.BaseTest;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import utils.WaitTool;
 
-public class TestCustomerRegistration extends CustomerBaseTest {
+public class RegisterAccountPageTest extends BaseTest {
 
     @Test
     public void testCustomerRegistrationSuccessfully() {
+        driver.get("https://auto.pragmatic.bg/index.php?route=account/login&language=en-gb");
         webApp.customerLoginPage().clickContinueButton();
         WaitTool.waitForElement(driver, By.id("input-firstname"), 10);
 
