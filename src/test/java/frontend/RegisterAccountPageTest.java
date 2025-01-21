@@ -9,9 +9,8 @@ import utils.WaitTool;
 public class RegisterAccountPageTest extends BaseTest {
 
     @Test
-    public void testCustomerRegistrationSuccessfully() {
-        driver.get("https://auto.pragmatic.bg/index.php?route=account/login&language=en-gb");
-        webApp.customerLoginPage().clickContinueButton();
+    public void testRegisterAccountSuccessfully() {
+        webApp.registerAccountPage().goToRegisterAccountPage();
         WaitTool.waitForElement(driver, By.id("input-firstname"), 10);
 
         //These two lines below ARE VALID and are NOT DEPRECATED

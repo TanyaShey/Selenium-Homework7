@@ -25,7 +25,7 @@ public class RegisterAccountPage extends BasePage {
     @FindBy(xpath = "//*[@id='form-register']/div/button")
     private WebElement continueButton;
 
-    private static final String URL = "https://auto.pragmatic.bg/index.php?route=account/login&language=en-gb";
+    private static final String URL = "https://auto.pragmatic.bg/index.php?route=account/register&language=en-gb";
 
     public RegisterAccountPage(WebDriver driver) {
         super(driver);
@@ -36,28 +36,28 @@ public class RegisterAccountPage extends BasePage {
     }
 
     public void registerAccount(String firstName, String lastName, String email, String password) {
-      fillInFirstNameInputField(firstName);
-      fillInLastNameInputField(lastName);
-      fillInEmailInputField(email);
-      fillInPasswordInputField(password);
+      typeTextInFirstNameInputField(firstName);
+      typeTextInLastNameInputField(lastName);
+      typeTextInEmailInputField(email);
+      typeTextInPasswordInputField(password);
       clickPrivacyPolicyCheckbox();
       clickContinueButton();
     }
 
-    public void fillInFirstNameInputField(String firstName) {
-        firstNameInputField.sendKeys(firstName);
+    public void typeTextInFirstNameInputField(String firstName) {
+        typeText(firstNameInputField, firstName);
     }
 
-    public void fillInLastNameInputField(String lastName) {
-        lastNameInputField.sendKeys(lastName);
+    public void typeTextInLastNameInputField(String lastName) {
+        typeText(lastNameInputField, lastName);
     }
 
-    public void fillInEmailInputField(String email) {
-        emailInputField.sendKeys(email);
+    public void typeTextInEmailInputField(String email) {
+        typeText(emailInputField, email);
     }
 
-    public void fillInPasswordInputField(String password) {
-        passwordInputField.sendKeys(password);
+    public void typeTextInPasswordInputField(String password) {
+        typeText(passwordInputField, password);
     }
 
     public void clickPrivacyPolicyCheckbox() {

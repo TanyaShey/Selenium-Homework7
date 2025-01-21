@@ -31,7 +31,7 @@ public class ContactUsPage extends BasePage {
         fillInYourNameField(yourName);
         fillInEmailField(email);
         fillInEnquiryField(enquiry);
-        WaitTool.waitForElement(driver, By.xpath("//*[@id='form-contact']/div/button"), 10);
+        WaitTool.waitForElementPresent(driver, By.xpath("//*[@id='form-contact']/div/button"), 10);
         //Scroll element into view
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView();", driver.findElement(By.xpath("//*[@id='form-contact']/div/button")));
